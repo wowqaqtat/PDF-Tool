@@ -9,10 +9,13 @@ PDF批量转换工具是一款实用的Python GUI应用程序，旨在帮助用�
 - [X] 批量转换：可以一次性选择多个文件，程序将进行批量转换，提高转换效率。
 - [X] 自定义输出位置：可以选择输出PDF文件的保存位置，方便管理和查找转换后的文件。
 - [X] 一键操作：程序的界面简洁明了，可以轻松地完成批量转换任务。
+- [X] 文件可拖拽：拖拽操作，轻松方便。
 
 ## 界面截图
 
-<img src="https://raw.githubusercontent.com/wowqaqtat/PDF-Tool/main/docx/1.jpg" height="250px"> <img src="https://raw.githubusercontent.com/wowqaqtat/PDF-Tool/main/docx/2.jpg" height="250px">
+<img src="https://raw.githubusercontent.com/wowqaqtat/PDF-Tool/main/docx/1.jpg" height="250px">
+
+<img src="https://raw.githubusercontent.com/wowqaqtat/PDF-Tool/main/docx/2.jpg" height="250px">
 
 <img src="https://raw.githubusercontent.com/wowqaqtat/PDF-Tool/main/docx/3.jpg" height="100px">
 
@@ -22,9 +25,12 @@ PDF批量转换工具是一款实用的Python GUI应用程序，旨在帮助用�
 2. 执行命令 `python main.py` 启动程序
 3. 也可以执行 `pyinstaller -F -n PDF批量转换工具 main.py` 命令打包程序
 4. 选择需要转换的文件，点击开始转换
-   (注意：使用 `pyinstaller -F -w -n PDF批量转换工具 main.py` 命令，无法转换word文件(bug)，所以去掉 `-w` 参数)
+
+（注意：使用 `pyinstaller -F -w -n PDF批量转换工具 main.py` 命令，无法转换word文件(bug)，所以去掉 `-w` 参数）
 
 **另外你也可以直接下载作者打包好的 `PDF批量转换工具.exe` 文件，`test文件夹` 中也提供了几个测试文件。**
+
+温馨提示：如果Windows提示 `Microsoft Defender SmartScreen 阻止了无法识别的应用启动。` 点击允许即可。
 
 ## 测试流程
 
@@ -33,6 +39,7 @@ PDF批量转换工具是一款实用的Python GUI应用程序，旨在帮助用�
 - [X] 正常选择保存位置
 - [X] 正常转换word为pdf
 - [X] 正常转换png、jpg图片为pdf
+- [X] 正常转换一个文件或多个文件
 - [X] 转换不支持的文件格式会提示错误
 - [X] 未选择文件或未选择保存位置会提示错误
 

@@ -1,0 +1,3 @@
+docx2pdf==0.1.8
+Pillow==10.1.0
+windnd==1.0.7

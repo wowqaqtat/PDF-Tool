@@ -2,8 +2,6 @@
 # 2023年10月26日
 # V1.0
 
-# TO DO
-# 实现文件拖入
 
 """
 打包方式
@@ -18,6 +16,7 @@ from docx2pdf import convert  # word处理
 from PIL import Image  # 图像处理
 from datetime import datetime  # 日期和时间
 import uuid  # 生成唯一标识符
+import windnd  # 文件拖拽
 
 current_date = datetime.now().strftime('%Y%m%d%H%M%S')  # 获取当前日期
 
@@ -61,6 +60,14 @@ def select_input_files():
         input_files_listbox.insert(tk.END, file)
 
 
+def dragged_files(files):
+    """文件拖拽事件"""
+    for file in files:
+        path = file.decode('gbk')
+        input_files_listbox.insert(tk.END, path)
+        print(path)
+
+
 def select_output_dir():
     """选择保存位置"""
     output_dir = os.path.join(os.getcwd(), "Output")
@@ -98,12 +105,14 @@ def welcome():
 if __name__ == '__main__':
     welcome()
     input_files = []  # 输入文件列表
+    # 初始化输出路径
     output_dir = os.path.join(os.getcwd(), "Output")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
     root = tk.Tk()
     root.title('PDF批量转换工具')
+    windnd.hook_dropfiles(root, func=dragged_files)  # 处理文件拖拽事件
 
     input_files_frame = tk.Frame(root)
     input_files_frame.pack(padx=10, pady=10)
